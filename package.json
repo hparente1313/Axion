@@ -1,0 +1,17 @@
+{
+  "name": "axion",
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-flow": "^7.22.15",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-ft-flow": "^3.0.1",
+    "eslint-plugin-vue": "^9.18.1",
+    "flow-bin": "^0.220.0",
+    "lerna": "^7.4.1",
+    "prettier": "^3.0.3",
+    "vue-eslint-parser": "^9.3.2"
+  }
+}
