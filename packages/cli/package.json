@@ -1,10 +1,11 @@
 {
   "name": "axion-cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "bin": {
-    "axion": "./bin/axion.js"
+    "axion": "bin/axion.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,8 +16,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@inquirer/prompts": "^3.2.0",
     "commander": "^11.1.0",
     "gradient-string": "^2.0.2",
-    "inquirer": "^9.2.11"
+    "update-notifier": "^7.0.0"
   }
 }

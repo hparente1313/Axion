@@ -1,32 +1,32 @@
 #!/usr/bin/env node
+import updateNotifier from 'update-notifier'
+import { Command } from 'commander'
 
-const { Command } = require('commander')
+// Local Imports
+import { validateNodeVersion } from '../lib/utils/validateNodeVersion.js'
+import { logAxionBanner } from '../lib/utils/banners.js'
+import { cliPackage } from '../lib/utils/cliPackage.js'
 
-const validateNodeVersion = require('../lib/utils/validateNodeVersion.js')
-const banners = require('../lib/utils/banners.js')
+
+const notifier = updateNotifier({pkg: cliPackage})
+
+validateNodeVersion()
+logAxionBanner()
+notifier.notify()
 
 
 const program = new Command()
+const cliPackageVersion = cliPackage['version']
 
 program.name('Axion CLI')
     .description('CLI for Axion framework')
-    .version('0.0.1')
+    .version(`${cliPackageVersion}`, '-v, --version', 'Outputs the current CLI version')
 
 program.command('create <appName>')
     .alias('c')
     .description('Create a new Axion app')
     .action((appName) => {
         console.log(`Creating '${appName}' using Axion!`)
-    })
-
-validateNodeVersion.default()
-banners.logAxionBanner()
-
-program.command('create')
-    .alias('c')
-    .description('Create a new Axion app')
-    .action(() => {
-        console.log('creating a new Axion app')
     })
 
 program.parse()
